@@ -3,7 +3,7 @@ const router = express.Router();
 const { ProfitGoal } = require("../models");
 
 // Create Profit Goal
-router.post("/profitGoal", async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     const { goalAmount, currency, deadline } = req.body;
     const profitGoal = await ProfitGoal.create({ goalAmount, currency, deadline });
@@ -14,7 +14,7 @@ router.post("/profitGoal", async (req, res) => {
 });
 
 // Get all Profit Goals
-router.get("/profitGoal", async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const profitGoals = await ProfitGoal.findAll();
     res.status(200).json(profitGoals);

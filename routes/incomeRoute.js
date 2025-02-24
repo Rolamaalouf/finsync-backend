@@ -4,7 +4,7 @@ const { Income } = require("../models");
 const { authenticateSuperAdmin } = require("../middleware/auth");
 
 // Create Income
-router.post("/income", async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     const { title, description, amount, currency, date, categoryId } = req.body;
     const income = await Income.create({ title, description, amount, currency, date, categoryId });
@@ -15,7 +15,7 @@ router.post("/income", async (req, res) => {
 });
 
 // Update Income (Super Admin Only)
-router.put("/income/:id", authenticateSuperAdmin, async (req, res) => {
+router.put("/:id", authenticateSuperAdmin, async (req, res) => {
   const { id } = req.params;
   const { title, description, amount, currency, date, categoryId } = req.body;
 
@@ -40,7 +40,7 @@ router.put("/income/:id", authenticateSuperAdmin, async (req, res) => {
 });
 
 // Delete Income (Super Admin Only)
-router.delete("/income/:id", authenticateSuperAdmin, async (req, res) => {
+router.delete("/:id", authenticateSuperAdmin, async (req, res) => {
   const { id } = req.params;
 
   try {

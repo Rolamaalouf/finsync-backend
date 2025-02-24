@@ -3,7 +3,7 @@ const router = express.Router();
 const { RecurringExpense } = require("../models");
 
 // Create Recurring Expense
-router.post("/recurringExpense", async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     const { title, description, amount, currency, startDate, endDate, frequency, categoryId } = req.body;
     const recurringExpense = await RecurringExpense.create({ title, description, amount, currency, startDate, endDate, frequency, categoryId });
@@ -14,7 +14,7 @@ router.post("/recurringExpense", async (req, res) => {
 });
 
 // Get all Recurring Expenses
-router.get("/recurringExpense", async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const recurringExpenses = await RecurringExpense.findAll();
     res.status(200).json(recurringExpenses);
