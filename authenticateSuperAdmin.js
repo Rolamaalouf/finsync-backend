@@ -1,5 +1,5 @@
 const jwt = require("jsonwebtoken");
-const { Admin } = require("../models");
+const { Admin } = require("./models/admin");
 
 // Middleware to authenticate and authorize Super Admin
 const authenticateSuperAdmin = async (req, res, next) => {

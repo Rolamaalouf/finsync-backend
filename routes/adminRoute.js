@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const { Admin } = require("../models");
+const { Admin } = require("../models/admin");
 const { JWT_SECRET } = process.env;
 
 // Super Admin or existing Admin creates a new admin

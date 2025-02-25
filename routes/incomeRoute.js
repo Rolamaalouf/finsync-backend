@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const { Income } = require("../models");
-const { authenticateSuperAdmin } = require("../middleware/auth");
+const { Income } = require("../models/income");
+const { authenticateSuperAdmin } = require("../authenticateSuperAdmin");
 
 // Create Income
 router.post("/", async (req, res) => {

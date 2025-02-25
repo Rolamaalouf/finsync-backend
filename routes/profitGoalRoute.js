@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { ProfitGoal } = require("../models");
+const { ProfitGoal } = require("../models/profitGoal");
 
 // Create Profit Goal
 router.post("/", async (req, res) => {

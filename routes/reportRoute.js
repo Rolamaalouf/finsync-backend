@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const { Income, Expense } = require("../models");
+const Income = require("../models/income");
+const Expense = require("../models/expense");
 const { Op } = require("sequelize");
 
 // Yearly Report

@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { RecurringExpense } = require("../models");
+const { RecurringExpense } = require("../models/recurringExpense");
 
 // Create Recurring Expense
 router.post("/", async (req, res) => {

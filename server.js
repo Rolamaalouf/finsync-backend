@@ -1,20 +1,19 @@
 require("dotenv").config();
 const express = require("express");
-const sequelize = require("./config/database");
-const superAdminRoutes = require("./routes/superAdminRoutes");
-const adminRoutes = require("./routes/adminRoutes");
+const sequelize = require("./database");
+const superAdminRoutes = require("./routes/superAdminRoute");
+const adminRoutes = require("./routes/adminRoute");
 
 const app = express();
 app.use(express.json());
 
 app.use("/super-admin", superAdminRoutes);
 app.use("/admin", adminRoutes);
-app.use("/admin", require("./routes/adminRoutes"));
-app.use("/income", require("./routes/incomeRoutes"));
-app.use("/expense", require("./routes/expenseRoutes"));
-app.use("/category", require("./routes/categoryRoutes"));
-app.use("/profit", require("./routes/profitGoalRoutes"));
-app.use("/report", require("./routes/reportRoutes"));
+app.use("/admin", require("./routes/adminRoute"));
+app.use("/income", require("./routes/incomeRoute"));
+app.use("/expense", require("./routes/expenseRoute"));
+app.use("/profit", require("./routes/profitGoalRoute"));
+app.use("/report", require("./routes/reportRoute"));
 
 sequelize.sync().then(() => {
   console.log("Database synced");
