@@ -5,6 +5,12 @@ const router = express.Router();
 const SuperAdmin = require("../models/superAdmin");
 
 // Super Admin Login
+
+// Test Route
+router.get("/", (req, res) => {
+  res.json({ message: "Super Admin route is working!" });
+});
+
 router.post("/login", async (req, res) => {
   try {
     const { username, password } = req.body;

@@ -7,6 +7,11 @@ const adminRoutes = require("./routes/adminRoute");
 const app = express();
 app.use(express.json());
 
+// Basic GET Route
+app.get("/", (req, res) => {
+  res.status(200).json({ message: "Welcome to the Financial Tracker API!" });
+});
+
 app.use("/super-admin", superAdminRoutes);
 app.use("/admin", adminRoutes);
 app.use("/admin", require("./routes/adminRoute"));
@@ -19,5 +24,5 @@ sequelize.sync().then(() => {
   console.log("Database synced");
 });
 
-const PORT = process.env.PORT || 5432;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
