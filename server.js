@@ -14,7 +14,6 @@ app.get("/", (req, res) => {
 
 app.use("/super-admin", superAdminRoutes);
 app.use("/admin", adminRoutes);
-app.use("/admin", require("./routes/adminRoute"));
 app.use("/income", require("./routes/incomeRoute"));
 app.use("/expense", require("./routes/expenseRoute"));
 app.use("/profit", require("./routes/profitGoalRoute"));
